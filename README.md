@@ -59,10 +59,12 @@ Choices not given in the paper, such as the 65/35 split, the validation split, t
 
 ## Results
 
-| Metric | Test set (USD) |
-|---|---|
-| MSE | _to be filled_ |
-| RMSE | _to be filled_ |
-| MAE | _to be filled_ |
+Test set metrics, with predictions converted back to USD:
 
-The paper reports a prediction accuracy of over 95% and a loss close to 0.1%. Those numbers aren't compared directly with the metrics above, because the accuracy measure and the split used in the paper aren't described on the abstract page.
+| Metric | Timesteps = 5 | Timesteps = 10 |
+|---|---|---|
+| MSE (USD²) | 82.8626 | 114.7561 |
+| RMSE (USD) | 9.1029 | 10.7124 |
+| MAE (USD) | 5.3776 | 7.3850 |
+
+The model's predictions sit consistently below the actual price, and the gap widens through 2020. The paper reports a prediction accuracy of over 95% and a loss close to 0.1%. These results don't reproduce that. The paper's accuracy measure and data split aren't described on its abstract page, so the two can't be compared directly.
