@@ -160,7 +160,7 @@ for epoch in range(EPOCHS):
         optimiser.step()  # Update the model parameters based on the computed gradients
         epoch_train_loss += loss.item() * len(inputs) # Accumulate the loss for the epoch
 
-    epoch_train_loss /= len(train_loader)  # Average loss for the epoch
+    epoch_train_loss /= len(train_dataset)  # Average loss for the epoch
 
     model.eval()  # Set the model to evaluation mode
     epoch_val_loss = 0.0
@@ -171,7 +171,7 @@ for epoch in range(EPOCHS):
             loss = criterion(predictions, targets)
             epoch_val_loss += loss.item() * len(inputs)  # Accumulate the loss for the epoch
 
-    epoch_val_loss /= len(val_loader)  # Average loss for the epoch
+    epoch_val_loss /= len(val_dataset)  # Average loss for the epoch
 
     train_losses.append(epoch_train_loss)
     val_losses.append(epoch_val_loss)
